@@ -3,7 +3,7 @@ public class Card {
 	private int card;
 	private int value;
 	private String face;
-	private String suiter
+	private String suiter;
 
 	public Card(int suit, int card) {
 		suit = this.suit;
@@ -16,11 +16,6 @@ public class Card {
 			value = 10;
 		}
 
-		if (card <=10) {
-			face = card.toString();
-		} else {
-			switch()
-		}
 
 
 	}
@@ -39,6 +34,29 @@ public class Card {
 
 	public int getCard() {
 		return card;
+	}
+
+	public String getFace() {
+		String face = null;
+		if (card <=10) {
+			face = Integer.toString(card);
+		} else {
+			switch(card) {
+				case 11: face = "Jack";
+				break;
+
+				case 12: face = "Queen";
+				break;
+
+				case 13: face = "King";
+				break;
+
+				case 14: face = "Ace";
+				break;
+			}
+		}
+
+		return face;
 	}
 
 }
