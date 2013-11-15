@@ -10,7 +10,7 @@ public class Deck {
 		cards = deck;
 	}
 
-	public static Card[] populateDeck() {
+	public static void populateDeck() {
 		Card[] dek = new Card[deck.length];
 		Card c;
 		int count=0;
@@ -23,7 +23,7 @@ public class Deck {
 		}	
 				
 
-		return dek;
+		setCards(dek);
 	}
 
 	public static void printDeck() {
@@ -41,6 +41,10 @@ public class Deck {
 				deck[index] = deck[i];
 				deck[i] = a;
 		}
+	}
+
+	public static void setCards(Card[] c) {
+		deck = c;
 	}
 
 }
