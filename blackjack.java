@@ -9,5 +9,11 @@ public class blackjack{
 		deck.printDeck();
 		deck.shuffle();
 		deck.printDeck();
+
+		String s = null;
+		for (int i=0; i<c.length; i++) {
+			s = c[i].getPath();
+			System.out.println(s);
+		}
 	}
 }
