@@ -6,14 +6,14 @@ public class blackjack{
 
 	public static void main(String[] args) {
 		deck.populateDeck();
-		deck.printDeck();
 		deck.shuffle();
 		deck.printDeck();
 
-		String s = null;
-		for (int i=0; i<c.length; i++) {
-			s = c[i].getPath();
-			System.out.println(s);
-		}
+		Hand h = new Hand(deck);
+		h.deal();
+		h.printCards();
+		h.hit();
+		h.printCards();
+		System.out.println(h.getValue());
 	}
 }

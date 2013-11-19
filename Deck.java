@@ -8,6 +8,7 @@ public class Deck {
 
 	public Deck(Card[] cards) {
 		cards = deck;
+		int cardsUsed = 0;
 	}
 
 	public static void populateDeck() {
@@ -45,6 +46,35 @@ public class Deck {
 
 	public static void setCards(Card[] c) {
 		deck = c;
+	}
+
+	public String getPath(int pos) {
+		String fc = null;
+		String path = null;
+		if (deck[pos].getSuit() <=10) {
+			fc = Integer.toString(deck[pos].getSuitStr());
+		} else {
+			switch(deck[pos].getSuit()) {
+				case 11: fc = "J";
+				break;
+
+				case 12: fc = "Q";
+				break;
+
+				case 13: fc = "K";
+				break;
+
+				case 14: fc = "A";
+			}
+		}
+		
+		path = fc + deck[pos].getSuitStr();		
+		return path;
+	}
+
+	public Card dealCard() {
+		this.cardsUsed++;
+		return deck[cardsUsed-1];
 	}
 
 }
