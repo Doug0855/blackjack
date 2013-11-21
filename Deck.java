@@ -49,29 +49,6 @@ public class Deck {
 		deck = c;
 	}
 
-	public String getPath(int pos) {
-		String fc = null;
-		String path = null;
-		if (deck[pos].getSuit() <=10) {
-			fc = deck[pos].getSuitStr();
-		} else {
-			switch(deck[pos].getSuit()) {
-				case 11: fc = "J";
-				break;
-
-				case 12: fc = "Q";
-				break;
-
-				case 13: fc = "K";
-				break;
-
-				case 14: fc = "A";
-			}
-		}
-		
-		path = fc + deck[pos].getSuitStr();		
-		return path;
-	}
 
 	public Card dealCard() {
 		this.cardsUsed++;
