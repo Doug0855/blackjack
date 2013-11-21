@@ -1,11 +1,12 @@
 public class Hand {
 
-	private Card[] cards = new Card[7];
+	private int cardCount = 0;
+	private Card[] cards = new Card[12];
+	private Deck deck;
 
 	public Hand(Deck deck) {
-		cards = h;
 		this.deck = deck;
-		int cardCount = 0;
+		this.cardCount = cardCount;
 	}
 
 	public void deal() {
@@ -24,7 +25,7 @@ public class Hand {
 		int value = 0;
 		int acecount = 0;
 
-		for (int i=0; i<cards.length; i++) {
+		for (int i=0; i<cardCount; i++) {
 			if (cards[i].getCard() <= 10) {
 				value += cards[i].getCard();
 			} else if (cards[i].getCard() < 14) {
@@ -43,7 +44,7 @@ public class Hand {
 	} 
 
 	public void printCards() {
-		for (int i=0; i<cards.length; i++) {
+		for (int i=0; i < cardCount; i++) {
 			System.out.println(cards[i].getFace() + " " + cards[i].getSuitStr());
 		}
 	}

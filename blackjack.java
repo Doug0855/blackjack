@@ -8,10 +8,12 @@ public class blackjack{
 		deck.populateDeck();
 		deck.shuffle();
 		deck.printDeck();
+		System.out.println();
 
 		Hand h = new Hand(deck);
 		h.deal();
 		h.printCards();
+		System.out.println();
 		h.hit();
 		h.printCards();
 		System.out.println(h.getValue());

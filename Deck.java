@@ -5,10 +5,11 @@ public class Deck {
 	public static Card[] deck = new Card[52];
 	public static Card[] hand = new Card[11];
 	public static Card[] newdeck = new Card[52];
+	private int cardsUsed = 0;
 
 	public Deck(Card[] cards) {
 		cards = deck;
-		int cardsUsed = 0;
+		this.cardsUsed = cardsUsed;
 	}
 
 	public static void populateDeck() {
@@ -52,7 +53,7 @@ public class Deck {
 		String fc = null;
 		String path = null;
 		if (deck[pos].getSuit() <=10) {
-			fc = Integer.toString(deck[pos].getSuitStr());
+			fc = deck[pos].getSuitStr();
 		} else {
 			switch(deck[pos].getSuit()) {
 				case 11: fc = "J";
