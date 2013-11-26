@@ -12,13 +12,13 @@ public class Deck {
 		this.cardsUsed = cardsUsed;
 	}
 
-	public static void populateDeck() {
+	public void populateDeck() {
 		Card[] dek = new Card[deck.length];
 		Card c;
 		int count=0;
-		for (int s=0; s<4; s++) {
+		for (int s=0; s<4; s++) {  //runs through each suit and generates 14 cards
 			for (int v=2; v<15; v++) {
-				c = new Card(s, v);
+				c = new Card(s, v, true);
 				dek[count] = c;
 				count++;
 			}
@@ -28,13 +28,13 @@ public class Deck {
 		setCards(dek);
 	}
 
-	public static void printDeck() {
+	public void printDeck() {
 		for (int i=0; i<deck.length; i++) {
 			System.out.println(deck[i].getFace() + " " + deck[i].getSuitStr());
 		}
 	}
 
-	public static void shuffle() {
+	public void shuffle() {
 		Random r = new Random();
 		for (int i=deck.length-1; i>0; i--) {
 			int index = r.nextInt(i+1);
@@ -45,7 +45,7 @@ public class Deck {
 		}
 	}
 
-	public static void setCards(Card[] c) {
+	public void setCards(Card[] c) {
 		deck = c;
 	}
 
