@@ -9,7 +9,7 @@ public class Deck {
 
 	public Deck(Card[] cards) {
 		cards = deck;
-		this.cardsUsed = cardsUsed;
+		this.cardsUsed = cardsUsed; //the the position of the top card of the deck
 	}
 
 	public void populateDeck() {
@@ -28,13 +28,13 @@ public class Deck {
 		setCards(dek);
 	}
 
-	public void printDeck() {
+	public void printDeck() {  //prints the cards into the terminal for testing purposes
 		for (int i=0; i<deck.length; i++) {
 			System.out.println(deck[i].getFace() + " " + deck[i].getSuitStr());
 		}
 	}
 
-	public void shuffle() {
+	public void shuffle() { //shuffles deck
 		Random r = new Random();
 		for (int i=deck.length-1; i>0; i--) {
 			int index = r.nextInt(i+1);
@@ -45,12 +45,12 @@ public class Deck {
 		}
 	}
 
-	public void setCards(Card[] c) {
+	public void setCards(Card[] c) {  //if the deck ever needed to be changed
 		deck = c;
 	}
 
 
-	public Card dealCard() {
+	public Card dealCard() { //used to deal cards into hands
 		this.cardsUsed++;
 		return deck[cardsUsed-1];
 	}
